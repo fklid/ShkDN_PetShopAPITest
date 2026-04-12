@@ -1,28 +1,28 @@
 plugins {
     id 'java'
 }
+
 repositories {
     mavenCentral()
 }
+
 dependencies {
-    // Source: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:6.0.3'
-    // Source: https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher
-    testImplementation 'org.junit.platform:junit-platform-launcher:6.0.3'
+    // JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    // Source: https://mvnrepository.com/artifact/io.rest-assured/rest-assured
-    testImplementation 'io.rest-assured:rest-assured:5.4.0'
+    // RestAssured for API testing
+    testImplementation 'io.rest-assured:rest-assured:5.3.2'
 
-    // Source: https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5
-    testImplementation 'io.qameta.allure:allure-junit5:2.29.1'
-    // Source: https://mvnrepository.com/artifact/io.qameta.allure/allure-rest-assured
-    testImplementation 'io.qameta.allure:allure-rest-assured:2.33.0'
+    // Allure
+    testImplementation 'io.qameta.allure:allure-junit5:2.24.0'
+    testImplementation 'io.qameta.allure:allure-rest-assured:2.24.0'
 
-    // Source: https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind
-    testImplementation 'tools.jackson.core:jackson-databind:3.1.0'
-    // Source: https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
-    testImplementation 'com.fasterxml.jackson.core:jackson-annotations:2.20'
+    // Jackson for JSON processing
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    testImplementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
 }
-test{ useJUnitPlatform()
 
+test {
+    useJUnitPlatform()
 }
